@@ -1,5 +1,6 @@
 from src.base import BasePage
 from src.config import Links
+from src.locators import MainPageLocators as mpl
 
 
 class MainPage(BasePage):
@@ -8,3 +9,15 @@ class MainPage(BasePage):
     def __init__(self, driver) -> None:
         super().__init__(driver)
         self.page_url = Links.MAIN_PAGE_URL
+
+    def scroll_to_accordion(self) -> None:
+        """Прокручиваем страницу до аккордеона"""
+        self.scroll_to(mpl.DIV_ACCORTION_HEADER)
+
+    def count_accordion_button(self) -> int:
+        elements = self.find_all_elements(mpl.DIV_ACCORDION_BUTTON)
+        return len(elements)
+
+    def get_accordion_text_by_index(self, index: int) -> str:
+        elements = self.find_all_elements(mpl.DIV_ACCORDION_BUTTON)
+        return elements[index].text

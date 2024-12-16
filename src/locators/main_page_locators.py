@@ -13,3 +13,7 @@ class MainPageLocators:
         "xpath",
         "//div[@class='accordion__panel']//p",
     )
+    BUTTON_BODY_ORDER: tuple[str, str] = (
+        "xpath",
+        "//div[contains(@class, 'Home')]/button[contains(text(), 'Заказать')]",
+    )

@@ -4,6 +4,8 @@ from typing import Optional
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from src.locators import BasePageLocator as bpl
+
 
 class BasePage(ABC):
     """Класс конструктор `*Page`"""
@@ -34,3 +36,12 @@ class BasePage(ABC):
     def scroll_to(self, locator: tuple[str, str]) -> None:
         element = self.wait.until(EC.presence_of_element_located(locator))
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def click_order_button_header(self) -> None:
+        self.click(bpl.BUTTON_ORDER)
+
+    def click_yandex_logo_header(self) -> None:
+        self.click(bpl.LOGO_LINK_YANDEX)
+
+    def click_scooter_logo_header(self) -> None:
+        self.click(bpl.LOGO_LINK_SCOOTER)

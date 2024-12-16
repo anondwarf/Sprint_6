@@ -25,3 +25,6 @@ class MainPage(BasePage):
     def get_accordion_text_by_index(self, index: int) -> str:
         elements = self.find_all_elements(mpl.P_ACCORDION)
         return elements[index].text
+
+    def click_order_button_body(self) -> None:
+        self.click(mpl.BUTTON_BODY_ORDER)

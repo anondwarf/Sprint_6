@@ -27,4 +27,5 @@ class MainPage(BasePage):
         return elements[index].text
 
     def click_order_button_body(self) -> None:
+        self.scroll_to(mpl.BUTTON_BODY_ORDER)
         self.click(mpl.BUTTON_BODY_ORDER)

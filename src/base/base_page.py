@@ -1,6 +1,7 @@
 from abc import ABC
 from typing import Optional
 
+from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -45,3 +46,20 @@ class BasePage(ABC):
 
     def click_scooter_logo_header(self) -> None:
         self.click(bpl.LOGO_LINK_SCOOTER)
+
+    def enter_text(self, locator: tuple[str, str], text: str) -> None:
+        self.wait.until(EC.presence_of_element_located(locator)).send_keys(
+            text
+        )
+
+    def is_element_present(self, locator: tuple[str, str]) -> bool:
+        try:
+            self.wait.until(EC.presence_of_element_located(locator))
+        except:
+            return False
+        return True
+
+    def click_keyboard_button_enter(self, locator: tuple[str, str]) -> None:
+        self.wait.until(EC.presence_of_element_located(locator)).send_keys(
+            Keys.ENTER
+        )

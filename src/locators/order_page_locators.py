@@ -1,11 +1,26 @@
 class OrderPageLocators:
     """Локаторы страницы оформления заказа"""
 
-    INPUT_FIRST_NAME: tuple[str, str] = ("xpath", "//input[@wfd-id='id29']")
-    INPUT_LAST_NAME: tuple[str, str] = ("xpath", "//input[@wfd-id='id30']")
-    INPUT_ADDRESS: tuple[str, str] = ("xpath", "//input[@wfd-id='id31']")
-    INPUT_METRO_STATION: tuple[str, str] = ("xpath", "//input[@wfd-id='id32']")
-    INPUT_PHONE_NUMBER: tuple[str, str] = ("xpath", "//input[@wfd-id='id33']")
+    INPUT_FIRST_NAME: tuple[str, str] = (
+        "xpath",
+        "//input[@placeholder='* Имя']",
+    )
+    INPUT_LAST_NAME: tuple[str, str] = (
+        "xpath",
+        "//input[@placeholder='* Фамилия']",
+    )
+    INPUT_ADDRESS: tuple[str, str] = (
+        "xpath",
+        "//input[@placeholder='* Адрес: куда привезти заказ']",
+    )
+    INPUT_METRO_STATION: tuple[str, str] = (
+        "xpath",
+        "//input[@placeholder='* Станция метро']",
+    )
+    INPUT_PHONE_NUMBER: tuple[str, str] = (
+        "xpath",
+        "//input[@placeholder='* Телефон: на него позвонит курьер']",
+    )
     BUTTON_NEXT: tuple[str, str] = (
         "xpath",
         "//button[contains(text(), 'Далее')]",
@@ -20,19 +35,15 @@ class OrderPageLocators:
     )
     DIV_OPTION_RENTAL_PERIOD: tuple[str, str] = (
         "xpath",
-        "//div[@role='option']",
+        "//div[@class='Dropdown-option']",
     )
-    CHECKBOX_BLACK_SCOOTER: tuple[str, str] = (
+    CHECKBOX_COLOR_SCOOTER: tuple[str, str] = (
         "xpath",
-        "//input[@wfd-id='id36']",
-    )
-    CHECKBOX_GRAY_SCOOTER: tuple[str, str] = (
-        "xpath",
-        "//input[@wfd-id='id37']",
+        "//input[@type='checkbox']",
     )
     BUTTON_ORDER: tuple[str, str] = (
         "xpath",
-        "//input[@wfd-id='id38']",
+        "//button[contains(@class, 'Middle') and contains(text(), 'Заказать')]",
     )
     MODAL_HEADER: tuple[str, str] = (
         "xpath",
@@ -42,4 +53,8 @@ class OrderPageLocators:
     BUTTON_DETAILS_ORDER: tuple[str, str] = (
         "xpath",
         "//button[text()='Посмотреть статус']",
+    )
+    LI_METRO_STATION_ITEM: tuple[str, str] = (
+        "xpath",
+        "//li[@role='menuitem']",
     )

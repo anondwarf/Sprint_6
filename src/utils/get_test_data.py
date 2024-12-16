@@ -1,7 +1,6 @@
 import json
 import os
-
-from defenition import DATA_DIR
+from src.config import FilePath
 
 
 class GetTestData:
@@ -10,8 +9,9 @@ class GetTestData:
     @staticmethod
     def get_accordion_text():
         file_name: str = "accordion_text.json"
+        file_path = FilePath()
         with open(
-            os.path.join(DATA_DIR, file_name),
+            os.path.join(file_path.DATA_DIR, file_name),
             "r",
             encoding="utf-8",
         ) as file:

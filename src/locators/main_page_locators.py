@@ -9,3 +9,7 @@ class MainPageLocators:
         "xpath",
         "//div[@class='accordion__button']",
     )
+    P_ACCORDION: tuple[str, str] = (
+        "xpath",
+        "//div[@class='accordion__panel']//p",
+    )

@@ -21,7 +21,7 @@ class BasePage(ABC):
         """Проверяет, что страница открыта"""
         return self.wait.until(EC.url_to_be(str(self.page_url)))
 
-    def click(self, locator: tuple[str, str]) -> None:
+    def click(self, locator) -> None:
         """Клик по элементу"""
         self.wait.until(EC.element_to_be_clickable(locator)).click()
 

@@ -18,6 +18,10 @@ class MainPage(BasePage):
         elements = self.find_all_elements(mpl.DIV_ACCORDION_BUTTON)
         return len(elements)
 
-    def get_accordion_text_by_index(self, index: int) -> str:
+    def click_accoudion_button_by_index(self, index: int) -> None:
         elements = self.find_all_elements(mpl.DIV_ACCORDION_BUTTON)
+        self.click(elements[index])
+
+    def get_accordion_text_by_index(self, index: int) -> str:
+        elements = self.find_all_elements(mpl.P_ACCORDION)
         return elements[index].text

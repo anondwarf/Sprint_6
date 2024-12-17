@@ -1,5 +1,6 @@
+import allure
+
 from operator import contains
-import time
 from typing import Optional
 from selenium.webdriver.support import expected_conditions as EC
 from src.base import BasePage
@@ -12,6 +13,7 @@ class OtherPage(BasePage):
         super().__init__(driver)
         self.page_url: Optional[str] = None
 
+    @allure.step("Проверка, что в `url` страницы содержится искомая строка")
     def is_url_contains(self, _url: str) -> bool:
         new_url = self.driver.current_url
         check = contains(new_url, _url)

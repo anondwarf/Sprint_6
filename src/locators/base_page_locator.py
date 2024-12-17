@@ -7,3 +7,7 @@ class BasePageLocator:
         "xpath",
         "//div[contains(@class, 'Header_Nav')]/button[contains(text(), 'Заказать')]",
     )
+    TITLE_YANDEX_DZEN: tuple[str, str] = (
+        "xpath",
+        "//title[contains(text(), 'Дзен')]",
+    )

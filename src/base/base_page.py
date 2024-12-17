@@ -20,9 +20,15 @@ class BasePage(ABC):
         """Открывает страницу"""
         self.driver.get(self.page_url)
 
+    def wait_load_page(self, url: str) -> bool:
+        return self.wait.until(EC.url_contains(url))
+
     def is_opened(self) -> bool:
         """Проверяет, что страница открыта"""
         return self.wait.until(EC.url_to_be(str(self.page_url)))
+
+    def is_opened_redirect(self, url: str) -> bool:
+        return self.wait.until(EC.url_contains(url))
 
     def click(self, locator) -> None:
         """Клик по элементу"""
@@ -63,3 +69,7 @@ class BasePage(ABC):
         self.wait.until(EC.presence_of_element_located(locator)).send_keys(
             Keys.ENTER
         )
+
+    def switch_tab(self):
+        new_tab = self.driver.switch_to.window(self.driver.window_handles[-1])
+        return new_tab

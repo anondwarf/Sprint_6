@@ -1,5 +1,6 @@
 import random
 import time
+
 from src.base import BasePage
 from src.config import Links
 from src.locators import OrderPageLocators as opl

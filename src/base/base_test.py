@@ -17,6 +17,7 @@ class BaseTest(ABC):
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver) -> None:
+        """Инициализация экземпляра класса `BaseTest`"""
         request.cls.driver = driver
         request.cls.main_page = MainPage(driver)
         request.cls.order_page = OrderPage(driver)

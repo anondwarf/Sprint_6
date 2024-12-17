@@ -14,7 +14,6 @@ class MainPage(BasePage):
 
     @allure.step("Прокрутка страницы до блока 'Вопросы о важном'")
     def scroll_to_accordion(self) -> None:
-        """Прокручиваем страницу до аккордеона"""
         self.scroll_to(mpl.DIV_ACCORTION_HEADER)
 
     @allure.step("Подсчёт кол-ва вопросов в блоке 'Вопрсоы о важном'")

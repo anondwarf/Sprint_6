@@ -1,8 +1,9 @@
-import allure
-
 from operator import contains
 from typing import Optional
+
+import allure
 from selenium.webdriver.support import expected_conditions as EC
+
 from src.base import BasePage
 from src.locators import BasePageLocator as bpl
 

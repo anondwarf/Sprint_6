@@ -1,5 +1,5 @@
 class OrderPageLocators:
-    """Локаторы страницы оформления заказа"""
+    """Локаторы `OrderPage`"""
 
     INPUT_FIRST_NAME: tuple[str, str] = (
         "xpath",

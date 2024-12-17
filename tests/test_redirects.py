@@ -1,5 +1,6 @@
-import pytest
 import allure
+import pytest
+
 from src.base import BaseTest
 
 

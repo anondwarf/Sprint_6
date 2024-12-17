@@ -1,5 +1,6 @@
-import allure
 import random
+
+import allure
 
 from src.base import BasePage
 from src.config import Links

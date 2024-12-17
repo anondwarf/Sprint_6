@@ -1,8 +1,7 @@
-import allure
-
 from abc import ABC
 from typing import Optional
 
+import allure
 from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -20,7 +19,6 @@ class BasePage(ABC):
 
     @allure.step("Открытие страницы")
     def open(self) -> None:
-        """Открывает страницу"""
         self.driver.get(self.page_url)
 
     @allure.step("Проверка, что `url` страницы содержит искумую подстроку")
@@ -29,16 +27,16 @@ class BasePage(ABC):
 
     @allure.step("Проверка, что страницы открыта")
     def is_opened(self) -> bool:
-        """Проверяет, что страница открыта"""
         return self.wait.until(EC.url_to_be(str(self.page_url)))
 
     @allure.step("Клик по элементу")
     def click(self, locator) -> None:
-        """Клик по элементу"""
         self.wait.until(EC.element_to_be_clickable(locator)).click()
 
     @allure.step("Поиск всех элементов по локатору")
-    def find_all_elements(self, locator: tuple[str, str]):
+    def find_all_elements(
+        self, locator: tuple[str, str]
+    ) -> EC.List[EC.WebElement]:
         elements = self.wait.until(
             EC.presence_of_all_elements_located(locator)
         )

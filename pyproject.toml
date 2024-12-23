@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "Sprint_6"
+version = "0.1.0"
+description = ""
+authors = ["Anton Bogomolov <ashteriel@yandex.ru>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pytest = "^8.3.4"
+selenium = "^4.27.1"
+isort = "^5.13.2"
+black = "^24.10.0"
+mypy = "^1.13.0"
+bandit = "^1.8.0"
+allure-pytest = "^2.13.5"
+faker = "^33.1.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+disable_test_id_escaping_and_forfeit_all_rights_to_community_support = true
+norecursedirs = [".git", ".venv"]
+python_files = "test_*.py"
+python_functions = "test_*"
+log_cli = true
+log_cli_level = "INFO"
+filterwarnings = "ignore"
+
+[tool.black]
+line-length = 79
+target-version = ['py313']
+
+[tool.isort]
+profile = "black"
+py_version = "all"
+
+[tool.mypy]
+python_version = "3.13.0"
+warn_return_any = true
+warn_unused_configs = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
